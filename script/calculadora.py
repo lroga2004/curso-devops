@@ -16,7 +16,7 @@ def dividir(a, b):
     return a / b
 
 
-print("=== Calculadora ===")
+print("=== Mi Calculadora DevOps ===")
 
 a = float(input("Introduce el primer número: "))
 operacion = input("Operación (+, -, *, /): ")
