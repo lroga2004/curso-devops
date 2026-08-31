@@ -1,0 +1,22 @@
+name: PR Checks
+
+on:
+   - pull_request
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                shell: bash
+                #orking-directory: ./curso-devops
+        
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: install dependencies
+              run: pip install -r requirements.txt
+
+            - name: run tests
+              run: pytest tests/test_calculadora.py
