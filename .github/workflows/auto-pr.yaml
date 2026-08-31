@@ -1,0 +1,20 @@
+name: Auto PR to main
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Crear o actualizar PR hacia main
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: main
+          branch: dev
+          title: "Merge dev → main"
+          body: "Pull Request automático generado tras push a dev."
